@@ -52,3 +52,7 @@ app.listen(PORT, () => {
     console.log(`🍳 Telecocinagram Modular v1.2.0-alpha activo en el puerto ${PORT}`);
 });
 
+
+// Integración oficial de la Biblioteca y Módulo de Ayuda - Developed Lab
+const libraryRouter = require('./src/routes/library');
+app.use('/api/library', libraryRouter);
