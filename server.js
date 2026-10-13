@@ -46,13 +46,12 @@ app.post('/api/bridge/binance-convert', handleBinanceConvert);
 app.post('/api/petrona/hologram-verify', verifyHologram);
 app.post('/api/petrona/audit-kitchen', auditKitchen);
 
+// --- INTEGRACIÓN DE LA BIBLIOTECA (Developed Lab) ---
+const libraryRouter = require('./src/routes/library');
+app.use('/api/library', libraryRouter);
+
 // --- INICIAR SERVIDOR ---
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`🍳 Telecocinagram Modular v1.2.0-alpha activo en el puerto ${PORT}`);
 });
-
-
-// Integración oficial de la Biblioteca y Módulo de Ayuda - Developed Lab
-const libraryRouter = require('./src/routes/library');
-app.use('/api/library', libraryRouter);
